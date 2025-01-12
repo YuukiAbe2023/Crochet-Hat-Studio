@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>編み物作るウェブサイト</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script> -->
@@ -28,25 +31,33 @@
             <!-- <input type="range" name="slider" value="100" min="50" max="250" step="5" id="topSlider" class="slider" 
                 oninput="topDisplay.textContent=this.value"/>
             <span id="topDisplay">100</span> -->
-            <div class="slider-container">
-                <input type="range" id="sideSlider" class="slider" min="20" max="500" value="70" step="5"
-                    oninput="valueDisplay.textContent=this.value">
-                    <span id="valueDisplay">70</span>
+            <div class="item">
+                <p>形を決めてください</p>
+
+                <span id="sidesize">サイドの高さ</span>
+                <input type="range" id="sideSlider" class="slider" min="20" max="500" value="70" step="5">
+
+                <span id="tsubasize">つばの大きさ</span>
                 <input type="range" id="tsubaSlider" class="slider" min="10" max="200" value="50" step="5">
-                    <span id="tsubasize">つばの大きさ</span>
+            
             </div>
-            <div class="sizeBtn-container">
+            <div class="item">
                 <p>サイズを選択してください</p>
-                <button onclick="selectSize(this, '大きめ', 1.2)">大きめ</button>
-                <button onclick="selectSize(this, '少し大きめ', 1.1)">少し大きめ</button>
-                <button onclick="selectSize(this, '標準', 1)">標準</button>
-                <button onclick="selectSize(this, '少し小さめ', 0.9)">少し小さめ</button>
-                <button onclick="selectSize(this, '小さめ', 0.8)">小さめ</button>
+                <button onclick="selectSize(this, '少し大きめ', 1.2)" id="sizeBtn">大きめ</button>
+                <button onclick="selectSize(this, '少し大きめ', 1.1)" id="sizeBtn">少し大きめ</button>
+                <button onclick="selectSize(this, '標準', 1)" id="sizeBtn">標準</button>
+                <button onclick="selectSize(this, '少し小さめ', 0.9)" id="sizeBtn">少し小さめ</button>
+                <button onclick="selectSize(this, '小さめ', 0.8)" id="sizeBtn">小さめ</button>
             </div>
-            
-            
-            <div class="amizuBtn-container">
-                <input type="button" onclick="pass();window.open('result.html')" id="amizuBtn" value="編み図出力">
+            <div class="item">
+                <form id="gauge-form">
+                    <label for="gauge-input">ゲージを入力: </label>
+                    <input type="number" id="gauge-input" placeholder="例: 42">
+                </form>
+                <p id="output"></p>
+            </div>
+            <div class="item">
+                <input type="button" onclick="pass();getGauge();window.open('result.html')" id="amizuBtn" value="編み図出力">
             </div>
         </div>
 
