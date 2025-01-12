@@ -12,7 +12,7 @@ let sideNum = Number(sideText);
 let tsubaText = sessionStorage.getItem("tsubaData");
 let tsubaNum = Number(tsubaText);
 
-let topDansuu = Math.round(topNum);//0.06のとこは後で変える！//四捨五入
+let topDansuu = Math.round(topNum * 0.17);//0.06のとこは後で変える！//四捨五入
 let topDansuuOffset = topDansuu + 1;
 let sideDansuu = Math.round(sideNum * 0.17);
 let tsubaDansuu = Math.round(tsubaNum * 0.17);
