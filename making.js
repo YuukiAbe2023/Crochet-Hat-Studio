@@ -1,5 +1,5 @@
 //これはグローバル変数のはず
-let standardSize = 30;
+let standardSize = 100;
 let sideSlider;
 let tsubaSlider;
 
@@ -22,6 +22,7 @@ let sideSize;
 let tsubaSize;
 
 let scale = 5;
+
 
 var pass=function(){
   // alert('(^-^)');
@@ -55,6 +56,23 @@ function selectSize(selectedButton, size, value) {
     // 選択された値を更新
     selectedValue = value;
 
+}
+
+
+//ゲージの取得
+function getGauge() {
+  // 入力ボックスの値を取得
+  const inputElement = document.getElementById('gauge-input');
+  const gauge = inputElement.value;
+
+  // 数字を出力
+  if (gauge) {
+      console.log(`入力された数字は: ${gauge}`);
+      document.getElementById('output').innerText = `入力された数字: ${gauge}`;
+  } else {
+      console.log('数字が入力されていません。');
+      document.getElementById('output').innerText = '数字が入力されていません。';
+  }
 }
 
 
@@ -107,7 +125,7 @@ function draw() {
   rotateY(-20);
   
   
-  topSize = standardSize * scale;
+  topSize = standardSize * selectedValue;
   // let topSize = Math.round(100 * selectedValue);
   sideSize = (Math.round((parseInt(sideSlider.value) * selectedValue)/scale)) * scale;
   tsubaSize = (Math.round((parseInt(tsubaSlider.value) * selectedValue)/scale)) * scale;
