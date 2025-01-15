@@ -1,5 +1,5 @@
 let canvas;
-
+let resultPage;
 //sessionStorageに保存したデータを取得
 let topText = sessionStorage.getItem("topData");
 
@@ -121,12 +121,12 @@ for (let i = topDansuu; i < topDansuu + tsubaDansuu; i++) {
 // console.log(amimes);//コンソール出力
 
 
-
-
 //一度だけ実行
 function setup() {
-  canvas = createCanvas(windowWidth - 300, windowHeight - 30);
+  canvas = createCanvas;
+  resultPage= document.getElementById('resultPage');
   canvas.class("canvas");
+  canvas.parent(resultPage);
   angleMode(DEGREES);
 
 }
@@ -182,7 +182,6 @@ function drawAmimes(amimes, phi, r) {
 
 //繰り返し実行
 function draw() {
-  // background(220);
   clear();
   translate(width - 50, height - 50);//50ってのは適当です
   noFill();
@@ -259,3 +258,10 @@ function draw() {
   }
   
 }
+
+//編み図をPNGとして保存
+const saveButton = document.getElementById("saveButton");
+  saveButton.addEventListener("click", () => {
+    saveCanvas(canvas, "myCanvas", "png");
+  });
+
