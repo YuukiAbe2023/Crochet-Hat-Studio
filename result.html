@@ -11,12 +11,20 @@
     <!-- <script src="https://cdn.jsdelivr.net/gh/molleindustria/p5.play/lib/p5.play.js"></script> -->
 </head>
 <body>
-    <h1>JavaScriptで動的に表を作成</h1>
-    <table id="data-table">
-    <!-- 表をここに動的に作成 -->
-    </table>
-    <script src="result.js"></script>
+    <div id="resultPage">
+        <table id="data-table">
+            <!-- 表をここに動的に作成 -->
+        </table>
+        <div class="canvas">
+            <!-- 多分だけど、ここに編み図描写 -->
+        </div>
+    </div>
+
+    <div class="item">
+        <button id="saveButton">Save as PNG</button>
+    </div>
     
+    <script src="result.js"></script>
 </body>
 </html>
 
