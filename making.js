@@ -96,8 +96,8 @@ function culculateZ(r, topSize,sideSize,ofset){
 function setup() {
   let container = document.getElementById('canvas-container');
   // let canvas = createCanvas(windowWidth*0.5, windowHeight*0.9, WEBGL);
-  let canvas = createCanvas(700, 700, WEBGL);
-  canvas.parent(container); // canvasをcontainerの中に入れる
+  let modelCanvas = createCanvas(700, 700, WEBGL);
+  modelCanvas.parent(container); // canvasをcontainerの中に入れる
 
   angleMode(DEGREES);
   
@@ -113,7 +113,7 @@ function setup() {
 
 function draw() {
 
-  background(240);
+  background(255);
   orbitControl(1,1,1);//マウスの動きに対する感度。1は初期値。
   // line(-350, -350, 350, -350);
   // line(-350, -350, -350, 350);
@@ -212,8 +212,8 @@ function draw() {
       for (let phi = 0; phi < vertices[r].length; phi++) {
         if (r < vertices.length - 1 && phi < vertices[r].length - 1) {
           beginShape();
-          fill(237, 255, 96);
-          stroke(0);
+          fill(255, 92, 59);
+          stroke(193, 87, 35);
           strokeWeight(0.5);
           vertex(vertices[r][phi].x, vertices[r][phi].y, vertices[r][phi].z);
           vertex(vertices[r + 1][phi].x, vertices[r + 1][phi].y, vertices[r + 1][phi].z);
