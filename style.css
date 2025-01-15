@@ -1,13 +1,14 @@
 body{
     font-family: system-ui, "游ゴシック", "Noto Sans JP W3", "sans-serif";
-    font-optical-sizing: auto;
+    /* font-optical-sizing: auto; */
     font-weight: weight;
     font-style: normal;
     color: #1a1a1a;
     /* background-color: #FFFBF3; */
-    background-color: #ffffff;
+    /* background-color: #FFFAF2; */
 }
 
+/* トップページ */
 li{
     list-style-type: none;
 }
@@ -21,7 +22,6 @@ li{
     margin-right: 50px;
     height: 100vh;
 }
-
 
 .title{
     /* background-color: navy; */
@@ -37,7 +37,6 @@ li{
     line-height: 2px;
     font-weight: 900;
 }
-
 
 .side{
     height:420vh;
@@ -297,20 +296,6 @@ footer{
     background-color: #FF5C3B;
 } */
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-}
-th {
-    background-color: #f4f4f4;
-}
-
-
 button {
     margin: 10px;
     padding: 10px 20px;
@@ -328,22 +313,22 @@ button.active {
     color: #ffffff;
 }
 
-#makingBtn {
-    background-color: #FFFBF3;
-    display: inline-block;
+.makingBtn {
+    background-color: #6c5b37;
+    /* display: inline-block; */
     padding: 0.4em 1.6em;
-    font-size: 2em;
+    font-size: 20px;
     font-weight: 800;
     color: #000000;
-    user-select: none;
+    /* user-select: none; */
     border: 1px #000000 solid;
     border-radius: 3px;
-    transition: 0.4s ease;
+    /* transition: 0.4s ease; */
     margin-top: 10px;
 }
 
 
-#makingBtn:hover {
+.makingBtn:hover {
     color: #FFFBF3;
     background: #000000;
 }
@@ -363,7 +348,7 @@ header{
 .making-page{
     display: flex;
     height: 90vh;
-    background-color: #ffffff;
+    background-color: #FFFAF2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -374,14 +359,14 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border-style: solid;
     border-width: 2px;
     
 }
 
 #making-container{
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     width: 50%;
     height: 70%;
     display: flex;
@@ -392,10 +377,10 @@ header{
 }
 
 .item{
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     width: 90%;
-    /* justify-content: center; 水平方向の中央揃え */
-    /* align-items: center; 垂直方向の中央揃え */
+    place-items: center;
+    text-align: left;
 }
 .slider {
     appearance: none;
@@ -432,19 +417,56 @@ header{
 #amizuBtn{
     /* background-color: #FFFBF3; */
     background-color: #ffffff;
-    display: inline-block;
     padding: 0.4em 1.6em;
     font-size: 1em;
     font-weight: 800;
     color: #000000;
-    user-select: none;
-    border: 2px #000000 solid;
-    border-radius: 10px;
-    transition: 0.4s ease;
+    /* user-select: none; */
+    border: 1px #000000 solid;
+    /* border-radius: 10px; */
     margin-top: 10px;
 }
 #amizuBtn:hover {
     /* color: #FFFBF3; */
     color: #ffffff;
     background: #000000;
+}
+
+#sizeBtn{
+    font-weight: 800;
+    border: 1px #000000 solid;
+}
+
+
+/* result.html 画面*/
+table {
+    width: 20%;
+    border-collapse: collapse;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    /* margin: 20px auto; */
+}
+th,td {
+    border: 2px solid #000;
+    padding: 10px;
+    text-align: center;
+    font-weight: 500;
+    /* font-weight: 1000; */
+}
+th {
+    background-color: #73ffde;
+}
+
+tr{
+    background-color: #ffffff;
+}
+
+/* これ機能してないわ */
+.resultPage{
+    background-color: #ff01e6;
+}
+
+.canvas{
+    background-color: #e5ff00;
 }
