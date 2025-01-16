@@ -4,7 +4,7 @@ body{
     font-weight: weight;
     font-style: normal;
     color: #1a1a1a;
-    /* background-color: #FFFBF3; */
+    background-color: #FFFBF2;
     /* background-color: #FFFAF2; */
 }
 
@@ -342,7 +342,7 @@ button.active {
 } */
 
 header{
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     height: 5vh;
 }
 .making-page{
@@ -455,7 +455,7 @@ th,td {
     /* font-weight: 1000; */
 }
 th {
-    background-color: #73ffde;
+    background-color: #e9e9e9;
 }
 
 tr{
@@ -463,10 +463,10 @@ tr{
 }
 
 /* これ機能してないわ */
-.resultPage{
-    background-color: #ff01e6;
+#resultPage{
+    background-color: #FFFBF2;
 }
 
-.canvas{
+/* .canvas{
     background-color: #e5ff00;
-}
+} */
