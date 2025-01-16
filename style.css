@@ -313,23 +313,21 @@ button.active {
     color: #ffffff;
 }
 
-.makingBtn {
-    background-color: #FFFBF2;
-    /* display: inline-block; */
+#makingBtn{
+    background-color: #FFFBF3;
+    /* background-color: #ffffff; */
     padding: 0.4em 1.6em;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 400;
+    font-weight: 400;
     color: #000000;
     /* user-select: none; */
-    border: 1px #000000 solid;
-    border-radius: 3px;
-    /* transition: 0.4s ease; */
-    margin-top: 10px;
+    border: 2px #000000 solid;
+    /* border-radius: 10px; */
+    margin-top: 1px;
 }
-
-
-.makingBtn:hover {
+#makingBtn:hover {
     color: #FFFBF3;
+    /* color: #ffffff; */
     background: #000000;
 }
 
