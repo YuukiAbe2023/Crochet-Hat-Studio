@@ -212,7 +212,7 @@ function draw() {
       for (let phi = 0; phi < vertices[r].length; phi++) {
         if (r < vertices.length - 1 && phi < vertices[r].length - 1) {
           beginShape();
-          fill(255, 92, 59);
+          fill(242, 146, 97);
           stroke(193, 87, 35);
           strokeWeight(0.5);
           vertex(vertices[r][phi].x, vertices[r][phi].y, vertices[r][phi].z);
@@ -278,3 +278,4 @@ document.addEventListener('DOMContentLoaded', () => {
   }
  
 });
+
