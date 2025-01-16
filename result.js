@@ -1,9 +1,11 @@
 let canvas;
-let resultPage;
+let resultPage = document.getElementById('resultPage');;
 //sessionStorageに保存したデータを取得
 let topText = sessionStorage.getItem("topData");
 
 //文字列を数字にする
+
+
 let topNum = Number(topText);
 
 let sideText = sessionStorage.getItem("sideData");
@@ -123,10 +125,10 @@ for (let i = topDansuu; i < topDansuu + tsubaDansuu; i++) {
 
 //一度だけ実行
 function setup() {
-  canvas = createCanvas;
-  resultPage= document.getElementById('resultPage');
+  canvas = createCanvas(windowWidth * 0.95, windowHeight * 0.9);
+  // resultPage= document.getElementById('resultPage');
   canvas.class("canvas");
-  canvas.parent(resultPage);
+  canvas.parent("resultPage");
   angleMode(DEGREES);
 
 }
@@ -262,6 +264,6 @@ function draw() {
 //編み図をPNGとして保存
 const saveButton = document.getElementById("saveButton");
   saveButton.addEventListener("click", () => {
-    saveCanvas(canvas, "myCanvas", "png");
+    saveCanvas(canvas, "myCanvas", "png");//p5jsのコードでした。
   });
 
