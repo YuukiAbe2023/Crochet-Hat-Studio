@@ -16,8 +16,8 @@
 </head>
 
 <body>
-    <script src="making.js"> </script>
     <header>
+        <!-- <h1><a href="index.html">Crochet Hat Studio</a></h1> -->
         <h1>Crochet Hat Studio</h1>
     </header>
 
@@ -35,34 +35,43 @@
                 <p>形を決めてください</p>
 
                 <span id="sidesize">サイドの高さ</span>
-                <input type="range" id="sideSlider" class="slider" min="20" max="500" value="70" step="5">
+                <input type="range" id="sideRange" class="slider" min="20" max="500" value="70" step="5">
 
                 <span id="tsubasize">つばの大きさ</span>
-                <input type="range" id="tsubaSlider" class="slider" min="10" max="200" value="50" step="5">
+                <input type="range" id="tsubaRange" class="slider" min="10" max="200" value="50" step="5">
             
             </div>
             <div class="item">
                 <p>サイズを選択してください</p>
-                <button onclick="selectSize(this, '少し大きめ', 1.2)" id="sizeBtn">大きめ</button>
-                <button onclick="selectSize(this, '少し大きめ', 1.1)" id="sizeBtn">少し大きめ</button>
-                <button onclick="selectSize(this, '標準', 1)" id="sizeBtn">標準</button>
-                <button onclick="selectSize(this, '少し小さめ', 0.9)" id="sizeBtn">少し小さめ</button>
-                <button onclick="selectSize(this, '小さめ', 0.8)" id="sizeBtn">小さめ</button>
+                <button onclick="selectSize(this, '少し大きめ', 1.2)" id="sizeBtn" class="button">大きめ</button>
+                <button onclick="selectSize(this, '少し大きめ', 1.1)" id="sizeBtn" class="button">少し大きめ</button>
+                <button onclick="selectSize(this, '標準', 1)" id="sizeBtn" class="button">標準</button>
+                <button onclick="selectSize(this, '少し小さめ', 0.9)" id="sizeBtn" class="button">少し小さめ</button>
+                <button onclick="selectSize(this, '小さめ', 0.8)" id="sizeBtn" class="button">小さめ</button>
             </div>
             <div class="item">
-                <form id="gauge-form">
-                    <label for="gauge-input">ゲージを入力: </label>
-                    <input type="number" id="gauge-input" placeholder="例: 42">
-                </form>
-                <p id="output"></p>
+                <p>ゲージを入力してください</p>
+                <span id="gaugeValue">ゲージの大きさ : 10 </span>
+                <input type="range" id="gaugeSlider" class="slider" min="0" max="50" value="10" step="1">
+                
             </div>
             <div class="item">
                 <!-- <input type="button" onclick="pass();getGauge();window.open('result.html')" id="amizuBtn" value="編み図出力"> -->
-                <button onclick="pass();getGauge(); location.href='result.html'" id="amizuBtn">編み図生成</button>
+                <button onclick="pass(); " id="amizuBtn" class="button">編み図生成</button>
             </div>
         </div>
+    </div>
+
+    <div id="resultPage">
+
+        <div class="saveBtnContainer">
+            <button id="saveBtn" class="button">PNGで保存</button>
+        </div>
+
+        <span class="tojiru" id="tojiru">×</span>
 
     </div>
+    <script src="making.js"> </script>
 
 </body>
 
