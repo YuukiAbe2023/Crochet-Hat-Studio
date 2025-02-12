@@ -34,7 +34,7 @@ var pass=function(){
 
 
 //スライダーの値を取得
-let sideSliderValue = 70; // スライダーの初期値
+let sideSliderValue = 50; // スライダーの初期値
 let tsubaSliderValue = 50;
 const sideSlider = document.getElementById('sideRange');
 const tsubaSlider = document.getElementById('tsubaRange');
@@ -62,12 +62,15 @@ function selectSize(selectedButton, size, value) { //ここのsizeってなに�
 
 
 //ゲージスライダーの値の取得の関数
+let gauge = 8;
 const gaugeSlider = document.getElementById('gaugeSlider');
     const gaugeSliderValue = document.getElementById('gaugeValue');
 
     // スライダーの値が変更されたときに値を更新
     gaugeSlider.addEventListener('input', () => {
-      gaugeSliderValue.textContent = "ゲージの大きさ : " + gaugeSlider.value; // 値をリアルタイムで更新
+      gauge = gaugeSlider.value;
+      gaugeSliderValue.textContent = "ゲージの大きさ : " + gauge; // 値をリアルタイムで更新
+      // console.log(gauge);
     });
 
 
@@ -114,9 +117,9 @@ var s1 = function (sketch) {
   sketch.rotateX(250);
   sketch.rotateY(-20);
     
-  topSize = standardSize * selectedValue;
+  // topSize = (Math.round((standardSize * selectedValue)/scale)) * scale;
   // let topSize = Math.round(100 * selectedValue);
-
+topSize = standardSize * selectedValue;
   sideSize = (Math.round((parseInt(sideSliderValue) * selectedValue)/scale)) * scale;
   tsubaSize = (Math.round((parseInt(tsubaSliderValue) * selectedValue)/scale)) * scale;
   
@@ -328,12 +331,12 @@ amizuBtn.addEventListener("click", function(){
         sketch.angleMode(sketch.DEGREES);
       }
 
-      topDansuu = Math.round(topNum * 0.17);//0.06のとこは後で変える！//四捨五入
+topDansuu = Math.round(topNum * 1.9 * gauge * 0.01);//100
 topDansuuOffset = topDansuu + 1;
-sideDansuu = Math.round(sideNum * 0.17);
-tsubaDansuu = Math.round(tsubaNum * 0.17);
-console.log(topDansuu);
-console.log(sideDansuu);
+sideDansuu = Math.round(sideNum * 1.9 * 2 * gauge * 0.01);//100
+tsubaDansuu = Math.round(tsubaNum * 1.9 * 2 * gauge * 0.01);
+// console.log(topDansuu);
+// console.log(sideDansuu);
 
 
 cols = 2; //列数
@@ -352,7 +355,7 @@ tableData = [
 
   //関数この中に書いてみる
   //編み図のサイズ
-  const size = 6;
+  const size = 5;
   const centerCircleSize = size * 6;
   const halfSize = size / 2;
   const amimes = [
@@ -470,11 +473,20 @@ tableData = [
     //for canvas 2
     // sketch.background(255);
     // sketch.translate(sketch.width - 50, sketch.height - 50);//50ってのは適当です
+    //テキスト
+    sketch.push();
+    sketch.textSize(30);
+    sketch.textFont("Noto Sans JP W3");
+    sketch.stroke(0);
+    sketch.strokeWeight(1);
+    sketch.text('Crochet Hat Studio', 10, 70);
+    sketch.pop();
+    
 
     
     sketch.push();
     //10の数字変えれば右上の隙間変わる。
-    sketch.translate(sketch.width - cols*cellWidth - 10, 10);
+    sketch.translate(sketch.width - cols*cellWidth - 10, 80);
     sketch.strokeWeight(1);
     sketch.textSize(16); // テキストサイズを設定
     sketch.textAlign(sketch.CENTER, sketch.CENTER);
@@ -584,14 +596,16 @@ tableData = [
   }
   sketch.pop();
   sketch.noLoop();
-
+  console.log(gauge);
 
   }//sketch.drawのカッコ
+  
   document.getElementById("saveBtn").addEventListener("click", function() {
     sketch.saveCanvas(amizuCanvas,"amizu", "png");
+    sketch.noLoop();
   });
-  
-  
+
+
 });//new p5のカッコ二つ
 
   resultPage.style.display = "flex"; // 表示
