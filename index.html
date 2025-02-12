@@ -1,82 +1,93 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+    <!-- フォント（英語） -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- フォント（日本語） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" /> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TopPage</title>
+    <title>Crochet hat Studio</title>
 </head>
 <body>
-
     <div id="top">
+        <div class="hwrapper">
+            <div class="header">
+                <div id="menu">
+                    <li><a href="#top">top</a></li>
+                    <li><a href="#about">about</a></li>
+                    <li><a href="#how">how to use</a></li>
+                </div>
+                <div id ="making">
+                    <button onclick="location.href='making.html'" id="makingBtn">start making</button>
+                </div>
+            </div>
+        </div>
         <div class="title">
             <p>Crochet</p>
             <p>Hat</p>
             <p>Studio</p>
         </div>
-        <div class="side">
-            <div class="wrapper">
-                <div class="menu">
-                    <li><a href="#top">top</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#how">how to use</a></li>
-                    <li><a href="#examples">example</a></li>
-                </div>
-                
-                <div class="making">
-                    <button onclick="location.href='making.html'" id="makingBtn">start making</button>
-                </div>
-                
-            </div>
-        </div>
     </div>
-
+    <div id="contents">
     <div id="about">
-        <div class="about-title">
-            <a>ABOUT</a>
-        </div>
+        <h1>about</h1>
         
-        <div class="about-box">
-            <p>このサイトの説明</p>
+        <div class="container">
+            <p>　Crochet Hat Studioは、オリジナルデザインのバケットハットをつくれるウェブサイトです。
+                3Dモデルを使ってバケットハットのデザインを調整して、そのデザインの編み図を自動で生成できます。</p>
+            <p>　作れるアイテムはかぎ針編みのバケットハットです。編み方は「こま編み」に限定しており、
+                初心者にも取り組みやすい構成となっています。</p>
+            <p>　Crochet Hat Studioは、技術的なハードルを下げ楽しく編み物ができる環境を提供することで、
+                オリジナル作品づくりがより身近なものになることを目指しています。</p>
         </div>
     </div>
 
     <div id="how">
-        <div class="how-title">
-            <a>HOW TO USE</a>
-        </div>
-        <div class="how-box">
-            <p>使い方の説明</p>
-            <p>チュートリアル動画も載せる</p>
+        <h1>how to use</h1>
+        <div class="container">
+            <h2>このサイトの使い方</h2>
+            <div class="howItem-container">
+                <div class = howItem>
+                    <!-- <h3>1</h3> -->
+                    <p>1.糸やかぎ針などの道具を用意します。</p>
+                    <p>糸の太さやかぎ針の大きさは自由に好きなものを選んでください。</p>
+                </div>
+                <div class = howItem>
+                    <!-- <h3>2</h3> -->
+                    <p>2.使用したい糸とかぎ針で直径10cmの円を編み、何段なのか数えます（ゲージを測る）。</p>
+                    <p>このケージは編み図出力の前に入力する必要があります。</p>
+                </div>
+                <div class = howItem>
+                    <!-- <h3>3</h3> -->
+                    <p>3.メイキング画面で、以下の通りにバケットハットのデザインをします。</p>
+                    <p>・3Dモデルでデザインの調整</p>
+                    <p>・サイズを決める</p>
+                    <p>・ゲージの入力</p>
+                </div>
+                <div class = howItem>
+                    <!-- <h3>4</h3> -->
+                    <p>4.編み図ボタンを押し、編み図を出力してPNGでダウンロードします。
+                    その編み図通りに編むことで、3Dモデルと同じバケットハットを作成できます。</p>
+                    <p>ダウンロードした編み図はA4で印刷できます。</p>
+                </div>
+            <!-- <h2>ゲージの測り方</h2>
+                <div class="howItem-container">
+            </div> -->
+            </div>
         </div>
     </div>
-
-    <div id="examples">
-        <div class="examples-title">
-            <a>EXAMPLES</a>
-        </div>
-        <div class="examples-container1">
-            <div class="example1"><a>例１</a></div>
-            <div class="example2"><a>例２</a></div>
-        </div>
-
-        <div class="examples-container2">
-            <div class="example3"><a>例３</a></div>
-            <div class="example4"><a>例４</a></div>
-        </div>
-
-        <div class="examples-container3">
-            <div class="example5"><a>例５</a></div>
-            <div class="example6"><a>例６</a></div>
-        </div>
-
-    </div>
+</div>
 
     <footer>
-
+        <p>Abe Yuuki</p>
+        <p>network design studio 2024</p>
     </footer>
 </body>
 </html>
